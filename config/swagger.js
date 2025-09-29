@@ -45,7 +45,8 @@ const options = {
     security: [] // seguridad global (vacío si no querés exigir token para todo)
   },
   // indicá los archivos donde están tus rutas/JSdoc
-  apis: ['./routes/*.js', './routes/**/*.js'] 
+    apis: ['../routes/*.js', './routes/**/*.js'] 
+
 };
 
 const specs = swaggerJsdoc(options);

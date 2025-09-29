@@ -9,7 +9,11 @@ const routes = require('../routes/Users')
 
 if (process.env.NODE_ENV !== "production") { require('dotenv/config'); } 
 
-const { PORT } = process.env; app.use(express.json()); routes(app) // ejemplo básico de endpoint 
+const { PORT } = process.env; 
+app.use(express.json());
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(specs))
+routes(app) 
+
 app.get("/", (req, res) => { 
   res.json({ message: "Hola mundo desde Express" }); 
 }); 
